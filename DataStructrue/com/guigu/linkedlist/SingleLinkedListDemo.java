@@ -9,10 +9,16 @@ public class SingleLinkedListDemo {
         HeroNode heroNode4 = new HeroNode(4,"林冲", "豹子头");
         //创建链表
         SingleLinkedList singleLinkedList= new SingleLinkedList();
-        singleLinkedList.add(heroNode1);
-        singleLinkedList.add(heroNode2);
-        singleLinkedList.add(heroNode3);
-        singleLinkedList.add(heroNode4);
+//        singleLinkedList.add(heroNode1);
+//        singleLinkedList.add(heroNode2);
+//        singleLinkedList.add(heroNode3);
+//        singleLinkedList.add(heroNode4);
+        //按照编号顺序添加
+          singleLinkedList.addByOrder(heroNode1);
+          singleLinkedList.addByOrder(heroNode4);
+          singleLinkedList.addByOrder(heroNode3);
+          singleLinkedList.addByOrder(heroNode2);
+
         //遍历链表
         singleLinkedList.show();
     }
@@ -36,18 +42,56 @@ class SingleLinkedList {
         //将节点插入尾部
         temp.next = heroNode;
     }
+    //按照节点编号顺序来添加节点，若节点编号村则，则题是，且不添加
+    //而且要找到待插入位置的前一个节点
+    public void addByOrder (HeroNode heroNode) {
+        //首先定义一个临时指针指向头节点
+        HeroNode temp = head;
+        //定义标志变量来确定是否有插入相同编号节点
+        boolean flag = false;
+        while (true) {
+            //判断是否到链表尾部
+            if (temp.next == null) {
+                break;
+            } else {
+                if (temp.next.no > heroNode.no) {
+                    break;
+                } else {
+                    if (temp.next.no == heroNode.no) {
+                        flag = true;
+                        break;
+                    }
+                }
+            }
+            //遍历链表
+            temp = temp.next;
+        }
+        //判断是否有编号相同的节点
+        if (flag) {
+            System.out.println("有编号相同的节点，无法添加");
+        }
+        else {
+            //找到temp为待插入节点的前一个位置,且插入
+            heroNode.next = temp.next;
+            temp.next = heroNode;
+        }
+    }
+
     //遍历链表
     public void show() {
-        //定义一个指针首先指向第一个节点
+        //判断链表是否为空
+        if (head.next == null) {
+            System.out.println("链表为空");
+            return;
+        }
+        //定义临时指针指向第一个节点
         HeroNode temp = head.next;
         while (true) {
-            //判断链表是否为空
-            if (head.next == null) {
-                System.out.println("链表为空");
-                return;
-            }
             System.out.println(temp);
             temp = temp.next;
+            if (temp == null) {
+                break;
+            }
         }
     }
 }
