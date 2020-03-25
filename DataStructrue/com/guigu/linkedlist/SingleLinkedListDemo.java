@@ -1,5 +1,7 @@
 package com.guigu.linkedlist;
 
+import java.util.Stack;
+
 public class SingleLinkedListDemo {
     public static void main (String args[]) {
         //创建节点
@@ -26,8 +28,15 @@ public class SingleLinkedListDemo {
         //删除1号节点
         singleLinkedList.delete(2);
 
+        //单链表的反转
+        //SingleLinkedList.reverseList(singleLinkedList.getHead());
+
         //遍历链表
         singleLinkedList.show();
+
+        //逆序打印链表，用栈存放的方式
+        System.out.println("逆序打印栈的~~~");
+        singleLinkedList.reversePrint(singleLinkedList.getHead());
 
         //求单链表中节点个数
         int len = singleLinkedList.getLength(singleLinkedList.getHead());
@@ -42,6 +51,51 @@ public class SingleLinkedListDemo {
 class SingleLinkedList {
     //初始化一个头节点
     HeroNode head = new HeroNode(0, "","");
+
+    //逆序打印单链表  可以用栈的方式打印，若是用单链表反转之后打印就会破坏单链表的结构
+    public static void reversePrint(HeroNode heroNode) {
+        //判断单链表是否为空
+        if (heroNode.next == null) {
+            return;
+        }
+        //创建一个栈，将链表节点压入栈中
+        Stack<HeroNode> stack = new Stack<>();
+        HeroNode cur = heroNode.next;
+        //入栈操作
+        while (cur != null) {
+            stack.push(cur);
+            cur = cur.next;  //指针后移
+        }
+        //打印栈
+        while (stack.size() > 0) {
+            System.out.println(stack.pop());
+        }
+    }
+
+    //单链表的反转
+    public static void reverseList(HeroNode head) {
+        //若单链表长度为0或是1则不需要反转
+        if (head.next == null || head.next.next == null) {
+            return;
+        }
+        //定义一个临时指针指向第一个节点
+        HeroNode cur = head.next;
+        //定义一个临时指针始终指向cur指向节点的下一个节点
+        HeroNode next = null;
+        //创建一个新的临时链表头节点
+        HeroNode reverseHead = new HeroNode(0, "", "");
+        while (cur != null) {
+            next = cur.next;
+            //将节点连接到临时反转链表中
+            cur.next = reverseHead.next;
+            reverseHead.next = cur;
+            cur.next = reverseHead.next;
+            cur = next;
+        }
+        //将临时链表指向原来链表
+        head.next = reverseHead.next;
+    }
+
 
     //饭返回头节点
     public HeroNode getHead() {
