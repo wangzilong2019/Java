@@ -26,8 +26,13 @@ public class DoubleLinkedListDemo {
 
         //删除
         doubleLinkedList.delete(3);
-        doubleLinkedList.delete(3);
         System.out.println("删除节点后的链表为");
+        doubleLinkedList.show();
+
+        //按序号顺序添加
+        HeroNode2 heroNode5 = new HeroNode2(3,"吴用", "智多星");
+        doubleLinkedList.addByOrder(heroNode5);
+        System.out.println("按顺序添加节点之后的链表为~~~");
         doubleLinkedList.show();
     }
 }
@@ -72,6 +77,44 @@ class DoubleLinkedList{
         temp.next = heroNode;
         heroNode.pre = temp;
     }
+
+    //按照节点编号顺序来添加节点，若节点编号村则，则题是，且不添加
+    //而且要找到待插入位置的前一个节点
+    public void addByOrder (HeroNode2 heroNode) {
+        //首先定义一个临时指针指向头节点
+        HeroNode2 temp = head;
+        //定义标志变量来确定是否有插入相同编号节点
+        boolean flag = false;
+        while (true) {
+            //判断是否到链表尾部
+            if (temp.next == null) {
+                break;
+            } else {
+                if (temp.next.no > heroNode.no) {
+                    break;
+                } else {
+                    if (temp.next.no == heroNode.no) {
+                        flag = true;
+                        break;
+                    }
+                }
+            }
+            //遍历链表
+            temp = temp.next;
+        }
+        //判断是否有编号相同的节点
+        if (flag) {
+            System.out.println("有编号相同的节点，无法添加");
+        }
+        else {
+            //找到temp为待插入节点的前一个位置,且插入
+            heroNode.next = temp.next;
+            heroNode.next.pre = heroNode;
+            temp.next = heroNode;
+            heroNode.pre = temp;
+        }
+    }
+
     //根据编号修改节点信息
     public void upDate(HeroNode2 newHeroNode) {
         //首先判断链表是否为空
