@@ -1,4 +1,4 @@
-package search;
+package com.guigu.search;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,3 +72,4 @@ public class BinarySearch {
         return new ArrayList<Integer>();
     }
 }
+

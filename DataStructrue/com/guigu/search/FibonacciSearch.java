@@ -1,11 +1,13 @@
-package search;
+package com.guigu.search;
 
 import java.util.Arrays;
 
 public class FibonacciSearch {
     static final int maxSize = 20;
     public static void main (String args[]) {
-
+        int[] arr = {2, 3, 5, 7, 8};
+        int resIndex = fibonacciSearch(arr, 3);
+        System.out.println("index = " + resIndex);
     }
 
     //因为要适用斐波那契数列 mid = low + F(k-1) -1
@@ -38,7 +40,43 @@ public class FibonacciSearch {
         for (int i = high + 1; i < temp.length; i++) {
             temp[i] = arr[high];
         }
-
+        //用while循环来处理
+        while (low <= high) { //只要这个条件满足，就可以寻找
+            mid = low + f[k-1] - 1;
+            if (findValue < arr[mid]) {  //这时我们应该向数组左面寻找
+                /***
+                 *  说明：
+                 *     全部元素 = 前面元素 + 后面元素
+                 *     f[k] = f[k-1] + f[k-2]
+                 *     因为前面有k-1个元素，因此可以继续拆分f[k-1] = f[k-2] + f[k-3]
+                 *     即在f[k-1]前面继续查找
+                 *     下次循环 mid = f[k-1-1] - 1
+                 *
+                 */
+                high = mid - 1;
+                k--;
+            } else if (findValue > arr[mid]) {  //此时我们应当向数组右面查找
+                /***
+                 *  说明：
+                 *     全部元素 = 前面元素 + 后面元素
+                 *     f[k] = f[k-1] + f[k-2]
+                 *     因为前面有k-2个元素，因此可以继续拆分f[k-1] = f[k-3] + f[k-4]
+                 *     即在f[k-2]前面继续查找k = k-2
+                 *     下次循环 mid = f[k-1-2] - 1
+                 *
+                 */
+                low = mid + 1;
+                k = k - 2;
+            } else {  //找到
+                if (low <= high) {
+                    return mid;  //确定返回元素下标
+                } else {
+                    return high;
+                }
+            }
+        }
+        //没有找到，返回-1
+        return -1;
 
     }
 }

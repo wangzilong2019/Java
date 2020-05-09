@@ -1,4 +1,4 @@
-package search;
+package com.guigu.search;
 
 public class SeqSearch {
     public static void main (String args[]) {
