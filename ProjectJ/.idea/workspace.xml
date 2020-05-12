@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bcf04808-cc44-4cd1-bf81-7ec562d24cf9" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bkrOdf1mlyP2HCQuRuYGHUutAC" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.KmpMatch">
+    <configuration name="BinarySearchNoRecursion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.guigu.binarysearchrecursion.BinarySearchNoRecursion" />
+      <module name="ProjectJ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.guigu.binarysearchrecursion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Hanoitower" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.guigu.dac.Hanoitower" />
+      <module name="ProjectJ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.guigu.dac.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KmpMatch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.guigu.kmp.KmpMatch" />
+      <module name="ProjectJ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.guigu.kmp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="ProjectJ" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ViolenceMatch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.guigu.kmp.ViolenceMatch" />
+      <module name="ProjectJ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.guigu.kmp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.BinarySearchNoRecursion" />
+      <item itemvalue="Application.Hanoitower" />
+      <item itemvalue="Application.ViolenceMatch" />
+      <item itemvalue="Application.KmpMatch" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.KmpMatch" />
+        <item itemvalue="Application.ViolenceMatch" />
+        <item itemvalue="Application.Hanoitower" />
+        <item itemvalue="Application.BinarySearchNoRecursion" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bcf04808-cc44-4cd1-bf81-7ec562d24cf9" name="Default Changelist" comment="" />
+      <created>1589186901822</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589186901822</updated>
+      <workItem from="1589186908275" duration="971000" />
+      <workItem from="1589243055402" duration="5504000" />
+      <workItem from="1589260479443" duration="3934000" />
+      <workItem from="1589274188055" duration="386000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
