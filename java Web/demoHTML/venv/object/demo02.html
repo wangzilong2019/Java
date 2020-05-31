@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+        <script>
+        //定义/声明了一个对象
+        /**
+         *  定义了对象中的属性
+         *  this：代表当前对象Person
+         *
+         * @constructor
+         */
+        /**
+         *  1、使用this关键字，在对象声明阶段定义一个属性
+         *  2、创建对象后的，使用对象.属性方式动态定义属性
+         * */
+        //1、在对象内部声明属性且赋值
+        function Person(n, a) {
+            //定义且初始化对象属性
+            this.name = n;
+            this.age = a;
+        }
+
+        //创建一个对象
+        var p = new Person("下哦昂", 18);
+        p.name = "小娃";
+        alert(p.name);
+        alert(p.age);
+
+        //2、声明属性并赋值方式
+        p.sex = "男";   //未Person对象声明并赋值属性
+        alert(p.sex);
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+        //直接量方式（必须全部字符都符合）
+        var reg = /^\s*$/;   //正则表达式，匹配0到多个空格
+        var flag = reg.test("   ");   //用来匹配字符串
+        var flag2 = reg.test("   a  ");
+        alert(flag);  //trye
+        alert(flag2);  //false
+
+        //普通方式（除非全部字符否不符合正则，返回false，只要由字符符合返回true）
+        var reg2  = /\s+/;
+        var flag = reg.test("  a ");
+        alert(flag);  //true
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
