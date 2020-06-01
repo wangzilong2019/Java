@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+        function run() {
+            alert("执行run()方法");
+            //2秒后执行一次run方法
+            //clearInterval(iid);
+        }
+
+        //设置定时器，每隔2秒执行一次run方法
+        var iid = setInterval(run, 2000);
+        //setInterval("run()", 2000);
+
+        //取消循环计时器
+        clearInterval(iid);
+
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
