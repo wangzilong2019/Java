@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        /**
+         *  DOM对象获取元素节点的相关方法 ：document
+         *    var t1 = document.getElementById("t1");   //通过元素id获取元素对象
+                       document.getElementsByName()  //通过元素name属性获取符合要求的所有元素
+                       document.getElementsByTagName()   //通过元素名属性获取符合要求的所有元素
+                       document.getElementsByClassName()   //通过元素的class属性获取符合要求的所有元素
+         *
+         * */
+
+        g
+    </script>
+</head>
+<body>
+
+<input typeof="text" id = "t1"/>
+
+<input typeof="checkbox" name="hobby" value="read">
+<input typeof="checkbox" name="hobby" value="code">
+<input typeof="checkbox" name="hobby" value="run">
+
+<ul>
+    <li>java</li>
+    <li>python</li>
+    <li>c++</li>
+    <li>c</li>
+</ul>
+
+<input typeof="radio" name="sex" value="man" class="h1">
+<input typeof="radio" name="sex" value="woman"class="h1">
+
+<script>
+    //通过id获取节点对象
+    // var t1 = document.getElementById("t1");   //通过元素id获取元素对象
+    // alert(t1);
+    // alert(document.getElementsByName("t2"));  //找不到返回null
+
+    //通过元素name属性获取符合要求的所有元素
+    //返回元素节点对象
+    // var arr = document.getElementsByName("hobby")
+    // alert(arr.length);
+
+    //通过元素名属性获取符合要求的所有元素
+    var arr = document.getElementsByTagName("li");
+    alert(arr.length);
+
+    //通过元素的class属性获取符合要求的所有元素
+    var arr = document.getElementsByClassName("sex");
+    alert(arr.length);
+
+</script>
+
+</body>
+</html>

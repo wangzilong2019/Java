@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .ys1{
+            color: rebeccapurple;
+        }
+        .ys2{
+            color: blue;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<span id = "t1" class="ys1">今天天气真好</span>
+
+<script>
+
+    //将t1元素的class属性值取出来
+    var t1 = document.getElementById("t1");
+    alert(t1.className);
+
+    //修改claa属性值
+    t1.className = "ys2";
+
+</script>
+
+</body>
+</html>

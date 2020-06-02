@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<span id = "s1">今天天气很好</span>
+
+<script>
+
+    //获取html标签内容体
+    var s1 = document.getElementById("s1");
+    alert(s1.innerHTML);
+
+    //设置html内容体
+    s1.innerHTML = "今天要下雪";
+
+    //追加html内容体
+    s1.innerHTML += "，适合野餐";
+
+</script>
+
+</body>
+</html>
