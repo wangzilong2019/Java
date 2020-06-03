@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+        <script>
+
+        function run1() {
+            alert("run1");
+        }
+
+        function run2(str) {
+            alert(str);
+        }
+
+        function run3(obj) {
+            alert(obj.value);
+        }
+
+    </script>
+
+</head>
+<body>
+
+<!--
+    绑定多个函数
+-->
+<input type="text"name="unmae" value="文本框" onclick="run1(), run2('你好'), run3(this)"/>
+
+</body>
+</html>

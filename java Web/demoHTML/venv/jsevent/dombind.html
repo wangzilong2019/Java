@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+        function run() {
+            alert("加载完毕");
+        }
+
+        //dom绑定事件方式  对象.事件属性
+        window.onload = run();
+
+        //dom绑定方式 匿名函数
+        window.onload = function () {
+            run();
+            run2();
+        }
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
