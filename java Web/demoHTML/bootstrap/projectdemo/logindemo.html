@@ -11,6 +11,79 @@
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 
+      <script>
+
+          //密码和确认密码一致性校验
+          function checkAndRepsd(p1 ,p2) {
+              if (p1 && p2) {
+                  //p1和p1都不为空
+                  //密码一致性校验
+                  var password = document.getElementById("password").value;
+                  var repsd = document.getElementById("repassword").value;
+                  //获取确认密码框题是信息标签
+                  var lab = document.getElementById("repasswordLabel");
+                  var pswdiv = document.getElementById("repasswordDiv");
+                  //判断密码是否一致
+                  if (password == repsd) {
+                      //清除非正确痕迹
+                      lab.innerHTML = "";
+                      pswdiv.className = " form-group";
+                      return true;
+                  } else {
+                      //设置提示信息
+                      lab.innerHTML += '密码错误';
+                      pswdiv.className = ' has-error';
+                      return false;
+                  }
+                  return true;
+              } else {
+                  alert("弹框");
+                  //至少有一个为空
+                  return false;
+              }
+          }
+
+          //检查元素表单是否为空
+          function checkNotNull(nid) {
+                            //用户名不能为空
+              //1、获取用户名表单输入元素对象
+              var nodex = document.getElementById(nid);
+              //获取显示错误回显信息的label标签
+              var lab = document.getElementById(nid + "Label");
+              //获取用户名文本框
+              var div = document.getElementById(nid + "Div");
+              //2、创建正则表达式
+              var reg = /^\s*$/;   //匹配0个或多个空格
+              if (reg.test(nodex.value)) {
+                  //用户名信息不合格
+                  //用户名错误时回显信息
+                  lab.innerHTML = '不能为空';
+                  //让文本框变红
+                  div.className += ' has-error';
+                  return false;
+              } else {
+                  //清除非正确痕迹
+                  lab.innerHTML = "";
+                  div.className = " form-group";
+                  //用户名信息合格
+                  return true;
+              }
+          }
+
+          //用于表单校验
+          function checkform() {
+              //用户名信息校验
+              var flag1 = checkNotNull("username");
+              //密码校验
+              var flag2 = checkNotNull("password");
+              //确认密码校验
+              var flag3 = checkNotNull("repassword");
+              //一致性判断
+              var flag4 = checkAndRepsd(flag2, flag3);
+              return flag1 && flag2 && flag3 && flag4;
+          }
+      </script>
+
   </head>
   <body>
         <!--创建一个容器-->
@@ -93,37 +166,41 @@
             <!--注册页面主体-->
             <div class="row" style="background-image: url(../img/shi02.jpg)">
                 <!--主体登录界面表单占8个，往右偏移2个-->
-                <div class="col-md-8 col-md-offset-2" style="border: 5px gainsboro ; background-color: white">
+                <div class="col-sm-8 col-sm-offset-2" style="border: 5px solid gainsboro ; background-color: white">
                     <!--嵌套栅格系统-->
                     <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <font  >会员注册</font>
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <font  color="#204D74" size="4" >会员注册</font>
                         </div>
                     </div>
 
-                    <form class="form-horizontal">
+                    <!--此处还有表单校验-->
+                    <form class="form-horizontal" onsubmit="return checkform()">
                         <!--用户名-->
-                        <div class="form-group">
+                        <div id="usernameDiv" class="form-group">
                             <label  class="col-sm-2 control-label">用户名</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名">
                             </div>
+                            <label id="usernameLabel" class="col-sm-2 control-label"></label>
                         </div>
 
                         <!--密码-->
-                        <div class="form-group">
+                        <div id="passwordDiv" class="form-group">
                             <label  class="col-sm-2 control-label">密码</label>
                             <div class="col-sm-8">
                                 <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
                             </div>
+                            <label id="passwordLabel" class="col-sm-2 control-label"></label>
                         </div>
 
                         <!--确认密码-->
-                        <div class="form-group">
+                        <div id="repasswordDiv" class="form-group">
                             <label  class="col-sm-2 control-label">确认密码</label>
                             <div class="col-sm-8">
                                 <input type="password" class="form-control" id="repassword"  placeholder="请确认输入密码">
                             </div>
+                            <label id="repasswordLabel" class="col-sm-2 control-label"></label>
                         </div>
 
                         <!--email-->
@@ -150,9 +227,10 @@
                                 <input type="radio"   name="sex" value="woman" >女
                             </div>
                         </div>
+
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <input type="submit" class="btn btn-danger btn-lg" value="注 册"  />
+                                <input type="submit" class="btn btn-danger btn-lg" value=" 注 册 "  />
                             </div>
                         </div>
                     </form>
