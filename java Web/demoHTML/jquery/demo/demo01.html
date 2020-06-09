@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <script>
+
+        //页面加载完毕执行函数
+        // window.onload = function () {
+        //     alert("hello, world");
+        // }
+
+        window.onload  = function() {
+            alert("hello word");
+        }
+
+        //上述会执行第二个函数
+
+        //使用jquery完成操作
+        $(function () {
+            alert("hello jquery");
+        });
+
+
+        $(function () {
+            alert("hello jquery");
+        });
+
+        //jquery绑定的俩个函数可都执行
+
+        //最完整写法
+        jQuery(document).ready(function () {
+            alert("hello 1");
+        })
+
+        //简写1
+        $(document).ready(function () {
+            alert("hello 2");
+        })
+
+        //简写3
+        $(function () {
+            alert("hello 3");
+        })
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

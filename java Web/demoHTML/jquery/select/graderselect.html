@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层级选择器</title>
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            //1、获取id = d的所有<a>子元素
+            var size1 = $("#d a").size();
+            alert(size1)
+
+        //2、获取id = d的直接<a>子元素
+            var size2 = $("#d>a").size();
+            alert(size2)
+
+        //3、获取id = d的第一个<p>兄弟元素
+            var size3 = $("#d+p").size();
+            alert(size3)
+
+        //4、获取id = d的所有<p>兄弟元素
+            var size4 = $("#d~p").size();
+            alert(size4);
+
+            //5、将id = d的所有子元素<a>文字颜色设置为红色
+            $("#d>a").css({"color" : "red"});
+            //设置多个属性时{"color" : "red", "font-size" : "10px"}
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <div id="d">
+        <a>java</a>
+
+        <p>
+            <a>c++</a>
+        </p>
+
+        <a>python</a>
+    </div>
+
+    <p>Mrs Yang</p>
+    <p>Mr Wang</p>
+
+</body>
+</html>

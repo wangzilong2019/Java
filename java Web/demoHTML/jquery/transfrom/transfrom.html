@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" >
+
+        //这里注意要在加载html代码之后再加载该代码
+        $(function () {
+            //获取dom对象
+            var div = document.getElementById("d");
+
+            //获取jquery对象
+            var jqueryDiv = $("#d");
+
+            //dom对象转换为jquery对象
+            $(div).html("hello jquery");
+
+            //jquery对象转换为dom对象
+            jqueryDiv.get(0).innerHTML = "hello jquery...";
+        });
+
+
+    </script>
+
+</head>
+<body>
+    <div id="d"></div>
+
+</body>
+</html>

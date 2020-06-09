@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本选择器</title>
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script>
+
+        $(function () {
+            //得到id = d1的元素内容显示出来
+            var html = $("#d1").html();
+            alert(html);
+
+            //通过文本获取
+            var text = $("#d1").text();
+            alert(text);
+
+            //text与html区别，text只获取标签内的文本，
+
+            //将class = d的文本内容加上欢迎您
+            /**
+             * each()方法可以遍历元素，也可以传递一个函数each(function(n))n代表每个元素的序号
+             * */
+
+            $(".d").each(function (i) {
+                //因为this时dom对象，所以要转换为jquery对象
+                $(this).html($(this).html() + "欢迎您");
+            });
+
+            //得到id = d1 的这个div在整个页面是第几个
+            var index = $("div").index($("#d1"));
+            alert(index);
+
+            //得到class = d的元素有几个
+            var size = $(".d").size();
+            alert(size);
+
+            //将class = d或id = d1的标签内容设置为Java
+            $(".d, #d1").text("java");
+        })
+
+    </script>
+
+</head>
+<body>
+
+    <div id="d1">1111</div>
+    <div class="d">2222</div>
+    <div class="d">3333</div>
+    <div></div>
+    <div></div>
+
+</body>
+</html>

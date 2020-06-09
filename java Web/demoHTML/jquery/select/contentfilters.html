@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内容过滤选择器</title>
+
+    <style type="text/css">
+        .disColor {
+            color: #0f0f0f;
+        }
+    </style>
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <script>
+        $(function () {
+
+            //设置文本内容包含Java的div字体为红色
+            $("div:contains('java')").css("color" , "red");
+
+            //设置一个没有子元素的div内容为”这是一个空的div“
+            $("div:empty").html("这是一个空的div");
+
+            //设置包含<a>标签的div字体颜色为红色
+            $("div:has(a)").addClass("divColor");
+
+            //设置含有子元素的span字体为蓝色
+            $("span:parent").css("color", "blue");
+
+        })
+    </script>
+
+</head>
+<body>
+
+    <div>java</div>
+    <div>ios</div>
+    <div></div>
+    <div>阿里巴巴</div>
+    <div>
+        世界第一语言<a>java</a>
+    </div>
+    <div>
+        <span>今天天气不错</span>
+    </div>
+
+</body>
+</html>
