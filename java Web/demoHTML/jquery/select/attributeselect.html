@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <script>
+
+        $(function () {
+            //1、设置所有含有id属性的div，颜色为红色
+            $("div[id]").css("color", "red");
+            //2、获取name = username的vlaue值
+            alert($("[name = 'username']").val());
+            //3、设置所有的多选框被选中
+            $("input[type = 'checkbox']").attr("checked", true);
+            //设置class中包含itcast的选多选框选中
+            $("input[type = 'checkbox'][class*='itcast']").attr("checked", true);
+            //拿到属性值
+            alert($("input[type = 'checkbox'][class='itcast1']").attr("name"));
+        })
+
+
+    </script>
+
+</head>
+<body>
+
+    <div id="d">
+        这是一个div
+    </div>
+
+    <form>
+        <input type="text" name="username" value="ton" /><br>
+        <input type="checkbox" class="itcast1" name="food" value="米饭">米饭
+        <input type="checkbox" class="itcast2" name="food" value="牛奶">牛奶
+        <input type="checkbox" class="itcast3" name="food" value="羊肉">羊肉
+        <hr>
+        <input type="checkbox" class="itheima1" name="hobby" value="篮球">篮球
+        <input type="checkbox" class="itheima2" name="hobby" value="篮球">篮球
+        <input type="checkbox" class="itheima1" name="hobby" value="足球">足球
+    </form>
+
+    <span id="s">
+        这是一个span
+    </span>
+
+</body>
+</html>

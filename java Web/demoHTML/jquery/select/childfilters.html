@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子元素过滤选择器</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <script>
+
+        $(function () {
+            //1、设置列表中第二个li字体为30
+            //这里参数可以设置倍数入odd或3n
+            $("ul li:nth-child(2)").css("font-size", 30);
+            //2、设置列表中第一个li字体为红色
+            $("ul li:first-child").css("color", "red");
+            //3、设置列表中最后一个字体为蓝色
+            $("ul li:last-child").css("color", "blue");
+            //4、打印只有一个li标签里的内容
+            alert($("ul li:only-child").html());
+        })
+
+    </script>
+
+</head>
+<body>
+    <ul>
+        <li>c++</li>
+        <li>java</li>
+        <li>python</li>
+        <li>php</li>
+    </ul>
+
+    <ul>
+        <li>刘德华</li>
+        <li>黎明</li>
+        <li>郭富城</li>
+    </ul>
+
+    <ul>
+        <LI>张天爱</LI>
+    </ul>
+</body>
+</html>
