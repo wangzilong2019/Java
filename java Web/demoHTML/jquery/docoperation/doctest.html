@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文档操作练习</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <script>
+
+        $(function () {
+            //获取点击事件
+            $(":button").click(function () {
+                //创建一个tr标签
+                var tr = $("<tr></tr>");
+
+                //创建td标签并添加内容
+                var td1 = $("<td></td>");
+                td1.append($("#name").val());
+                var td2 = $("<td></td>");
+                td2.append($("#phone").val());
+                var td3 = $("<td></td>");
+                td3.append($("#email").val());
+                var td4 = $("<td></td>");
+
+                //创建一个删除标签
+                var a = $("<a href='javascript:void(0)'>删除</a>");
+                td4.append(a);
+
+                //删除操作
+                a.click(function () {
+                    //$(this).parent().parent().remove();
+
+                    $(this).parents("tr").remove();
+                });
+
+                //将td标签添加到tr中
+                tr.append(td1).append(td2).append(td3).append(td4);
+
+                //将tr标签添加到tabzle中
+                $("#tab").append(tr);
+            });
+        })
+
+    </script>
+
+</head>
+<body>
+
+    <div align = "center">
+        <table id="tab" border="1">
+            <tr>
+                <td>姓名</td>
+                <td>电话</td>
+                <td>邮箱</td>
+                <td>删除</td>
+            </tr>
+        </table>
+        <hr>
+
+        姓名：<input type="text" id="name"/>
+        电话：<input type="text" id="phone"/>
+        邮箱：<input type="text" id="email"/>
+        <input type="button" value="添加"/>
+
+    </div>
+
+</body>
+</html>

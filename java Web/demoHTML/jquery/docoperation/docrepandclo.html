@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文档操作与克隆</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    
+    <script>
+        
+        $(function () {
+
+            //1、得到div中id = d1的第一个p克隆
+            $("#d1 p:first").click(function () {
+                alert("pppp")
+            });
+
+            $("a").mouseover(function () {
+                alert("aaaa");
+            });
+
+            var p = $("#d1 p:first").clone(false, true);
+            //第一个boolean代表事件是否会被克隆
+            //第二个boolean代表子元素的事件是否会被克隆
+
+            //2、id =  d2中的第一个span使用p替换
+            p.replaceAll($("#d2 span:last"));
+        })
+        
+    </script>
+    
+</head>
+<body>
+
+    <div id="d1">
+        <p>
+            <a>p1</a>
+        </p>
+        <p>
+            p2
+        </p>
+    </div>
+    <div id="d2">
+        <span>span1</span>
+        <span>span2</span>
+    </div>
+
+</body>
+</html>

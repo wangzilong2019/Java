@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文档删除操作</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <script>
+
+        $(function () {
+            //将元素下所有子元素删除
+            $("#d1").empty();
+
+            //给p注册事件
+            $("#d1 p").click(function () {
+                alert("333");
+            })
+
+            //remove()与detach()功能都是删除
+            var p = $("#d1 p").remove();
+            //区别remove删除时连注册事件同时删除，detach删除时不删除
+
+            //在标签中添加标签
+            $("#d2").append(p);
+        })
+
+    </script>
+
+</head>
+<body>
+
+    <div id="d1">
+        <p>11111</p>
+        <span>2222</span>
+    </div>
+    <div id="d2">
+
+    </div>
+
+</body>
+</html>
