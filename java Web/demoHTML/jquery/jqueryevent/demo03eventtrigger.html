@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery事件触发</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <script>
+
+        $(function () {
+            //绑定一次性事件
+            $("#btn").one("click", function () {
+                alert("一次性点击事件被触发");
+            })
+
+            //给按钮注册一个mouseover事件
+            $("#btn").bind("mouseover", function () {
+                //事件触发
+                $(this).trigger("click")
+            })
+        })
+
+    </script>
+
+</head>
+<body>
+    <input type="button" id="btn" value="按钮"/>
+</body>
+</html>

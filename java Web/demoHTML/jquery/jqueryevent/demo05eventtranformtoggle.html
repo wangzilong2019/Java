@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件切换-toggle</title>
+    //<script type="text/javascript" src="../js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script>
+
+        $(function () {
+            $("img").toggle(function () {
+                //当点击一次时执行该事件
+                $(this).attr("src", "../../bootstrap/img/shi02.jpg");
+            },function () {
+                //点击第二次时
+                $(this).attr("src", "../../bootstrap/img/shi03.jpg");
+            },function () {
+                //点击第三次时
+                $(this).attr("src", "../../bootstrap/img/shi02.jpg");
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    <img src="../../bootstrap/img/shi01.jpg" width="640" height="382">
+</body>
+</html>

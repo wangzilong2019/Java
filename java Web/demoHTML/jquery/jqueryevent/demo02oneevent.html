@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一次性事件</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <script>
+
+        $(function () {
+            //绑定一次性事件
+            $("#btn").one("click", function () {
+                alert("一次性点击事件");
+            })
+        })
+
+    </script>
+
+</head>
+<body>
+    <input type="button" id="btn" value="按钮"/>
+</body>
+</html>

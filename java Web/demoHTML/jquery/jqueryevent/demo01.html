@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery事件绑定机制</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <script>
+
+         //使用jquery事件绑定(这是一种简化方案)
+         $(function () {
+             // $("#btn").click(function () {
+             //     alert("点我昂么");
+             // })
+
+            //  //使用bind进行事件绑定
+            //  $("#btn").bind("click", function () {
+            //  alert("使用bind绑定事件");
+            // });
+
+             // //使用bind解除绑定事件
+             // $("#btn").unbind("click");
+
+             //live作用与bind相同，用法也一样，只不过live可以绑定尚未存在标签事件
+         });
+
+
+        // //用js添加点击事件
+        // window.onload = function () {
+        //     document.getElementById("btn").onclick = function () {
+        //     alert("点我干嘛");
+        // }
+        // }
+    </script>
+
+</head>
+<body>
+
+    <input type="button" value="按钮" id="btn"/>
+</body>
+</html>
